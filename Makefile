@@ -7,4 +7,4 @@ zip: lambda
 	zip -j bootstrap.zip bootstrap
 
 local: $(SOURCEFILES) cmd/local/main.go
-	GOOS=linux CGO_ENABLED=0 go build -o main ./cmd/local/main.go
+	go run ./cmd/local/main.go
