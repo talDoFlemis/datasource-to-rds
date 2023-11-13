@@ -6,5 +6,5 @@ import (
 
 type Database interface {
 	DeleteOldData() error
-	PutNewDatasources(datas []datasource.DataSourceDefinition) error
+	PutNewDatasources(datas []datasource.DataSourceMetadataModel) error
 }

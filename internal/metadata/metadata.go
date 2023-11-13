@@ -119,7 +119,7 @@ func (m *MetadataService) DeleteOldData() error {
 	return err
 }
 
-func (m *MetadataService) InsertIntoDatabase(datas []datasource.DataSourceDefinition) error {
+func (m *MetadataService) InsertIntoDatabase(datas []datasource.DataSourceMetadataModel) error {
 	err := m.db.PutNewDatasources(datas)
 	return err
 }
