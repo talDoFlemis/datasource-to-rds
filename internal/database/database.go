@@ -1,7 +1,7 @@
 package database
 
 import (
-	"datasource-to-rds/internal/datasource"
+	"bigdatafor-datasource-ingest-to-rds/internal/datasource"
 )
 
 type Database interface {

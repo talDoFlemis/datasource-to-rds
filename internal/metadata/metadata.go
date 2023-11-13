@@ -11,8 +11,8 @@ import (
 	"github.com/aws/aws-sdk-go-v2/feature/s3/manager"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 
-	"datasource-to-rds/internal/database"
-	"datasource-to-rds/internal/datasource"
+	"bigdatafor-datasource-ingest-to-rds/internal/database"
+	"bigdatafor-datasource-ingest-to-rds/internal/datasource"
 )
 
 type MetadataService struct {

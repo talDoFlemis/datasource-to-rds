@@ -8,7 +8,7 @@ import (
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 
-	"datasource-to-rds/internal/datasource"
+	"bigdatafor-datasource-ingest-to-rds/internal/datasource"
 )
 
 type PostgresManager struct {

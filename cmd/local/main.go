@@ -11,9 +11,9 @@ import (
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/joho/godotenv"
 
-	"datasource-to-rds/internal/database"
-	"datasource-to-rds/internal/datasource"
-	"datasource-to-rds/internal/metadata"
+	"bigdatafor-datasource-ingest-to-rds/internal/database"
+	"bigdatafor-datasource-ingest-to-rds/internal/datasource"
+	"bigdatafor-datasource-ingest-to-rds/internal/metadata"
 )
 
 var (

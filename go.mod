@@ -1,4 +1,4 @@
-module datasource-to-rds
+module bigdatafor-datasource-ingest-to-rds
 
 go 1.21.3
 
