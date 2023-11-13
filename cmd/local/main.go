@@ -12,6 +12,7 @@ import (
 	"github.com/joho/godotenv"
 
 	"datasource-to-rds/internal/database"
+	"datasource-to-rds/internal/datasource"
 	"datasource-to-rds/internal/metadata"
 )
 
@@ -54,12 +55,24 @@ func (a *App) Run() error {
 			len(resp),
 		)
 	}
+
+	models := make([]datasource.DataSourceMetadataModel, 0, len(resp))
+
+	for _, v := range resp {
+		model, err := v.ToDataSourceMetadateModel()
+		if err != nil {
+			println("Error converting to model: ", err)
+			return err
+		}
+		models = append(models, *model)
+	}
+
 	err = a.DeleteOldData()
 	if err != nil {
 		return err
 	}
 
-	err = a.InsertIntoDatabase(resp)
+	err = a.InsertIntoDatabase(models)
 	return err
 }
 

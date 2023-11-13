@@ -58,12 +58,24 @@ func (a *App) Handler(ctx context.Context, event *Request) (*Response, error) {
 			len(resp),
 		)
 	}
+
+	models := make([]datasource.DataSourceMetadataModel, 0, len(resp))
+
+	for _, v := range resp {
+		model, err := v.ToDataSourceMetadateModel()
+		if err != nil {
+			println("Error converting to model: ", err)
+			return nil, err
+		}
+		models = append(models, *model)
+	}
+
 	err = a.DeleteOldData()
 	if err != nil {
 		return nil, err
 	}
 
-	err = a.InsertIntoDatabase(resp)
+	err = a.InsertIntoDatabase(models)
 	if err != nil {
 		return nil, err
 	}
